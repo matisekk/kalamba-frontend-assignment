@@ -1,3 +1,95 @@
+# Conduit Frontend Assignment Solution
+
+This repository contains my implementation of the Frontend Engineer recruitment assignment based on the Conduit application.
+
+The goal was to implement the required pages and interactions using the provided Create React App skeleton and the backend API described in `docs/schema/swagger.json`.
+
+## Implemented features
+
+- Articles list page
+- Article details page
+- Author profile page
+- Login and logout
+- Favorite / unfavorite article
+- Follow / unfollow author
+- Author avatar placeholder when image is missing
+- Articles pagination
+- Basic loading and error states
+- Unit test for the `AuthorAvatar` and `formatArticleDate` component
+
+## Tech stack
+
+- React
+- TypeScript
+- React Router
+- TanStack Query
+- Axios
+- Moment.js
+- React Testing Library
+- Docker
+
+## Project structure
+
+```text
+src/
+  api/          API client, API functions and response types
+  auth/         Authentication context, provider and storage helpers
+  components/  Reusable UI components
+  constants/   Shared constants
+  pages/       Route-level page components
+  styles/      Conduit styles
+  utils/       Shared utility functions
+```
+
+## Running the frontend locally
+
+This project was tested with Node.js 16 because the provided Create React App / webpack setup has compatibility issues with newer Node.js versions.
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the application:
+
+```bash
+npm start
+```
+
+If port `3000` is already used by the backend, Create React App may ask to run the frontend on another port. This is expected.
+
+## Running the frontend with Docker
+
+Build the frontend Docker image:
+
+```bash
+docker build -t job-assignment-frontend-engineer .
+```
+
+Run the frontend container:
+
+```bash
+docker run --rm -p 8080:80 job-assignment-frontend-engineer
+```
+
+The application should be available at:
+
+```text
+http://localhost:8080/
+```
+## Notes and implementation decisions
+
+- User registration was intentionally not implemented, according to the assignment requirements.
+- Comments section was intentionally not implemented, according to the assignment requirements.
+- Tags functionality was intentionally not implemented. Tags may still appear as a visual part of the original template where applicable.
+- The original Conduit-like layout was preserved.
+- The external Conduit stylesheet was added locally because the original remote stylesheet is no longer reliably accessible.
+- TanStack Query is used for server-state management, caching and invalidating article/profile data after favorite/follow actions.
+- Authentication token is stored locally and attached to API requests.
+
+---
+
 # Assignment for Frontend Engineer job applicants
 
 ## Background

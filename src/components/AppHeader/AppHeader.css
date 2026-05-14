@@ -1,0 +1,18 @@
+.app-header__logout-button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.app-header__logout-button:focus {
+  outline: none;
+}
+
+.app-header__logout-button:hover {
+  text-decoration: none;
+}
+
+.app-header__nav-icon {
+  margin-right: 4px;
+}
